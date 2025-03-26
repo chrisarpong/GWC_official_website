@@ -1,0 +1,284 @@
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    overflow: hidden;
+    margin-top: 80px;
+}
+
+.hero-slides {
+    position: relative;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    width: 80%;
+    max-width: 800px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.slide-content h2 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-family: var(--font-secondary);
+}
+
+.slide-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.slide-controls {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+}
+
+.slide-controls button {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #fff;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide-controls button:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Welcome Section */
+.welcome {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.welcome .container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.welcome-content {
+    flex: 1;
+}
+
+.welcome-content h2 {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    font-family: var(--font-secondary);
+}
+
+.welcome-content p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.welcome-image {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.welcome-image:hover img {
+    transform: scale(1.05);
+}
+
+/* Quick Info Section */
+.quick-info {
+    padding: 60px 0;
+    background-color: var(--light-color);
+}
+
+.quick-info .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.info-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.info-card i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.info-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+    font-family: var(--font-secondary);
+}
+
+.info-card p {
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.info-card a {
+    color: var(--primary-color);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.info-card a:hover {
+    color: var(--secondary-color);
+}
+
+/* Latest Sermon Section */
+.latest-sermon {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.sermon-container {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+    align-items: center;
+}
+
+.sermon-video {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.sermon-video iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
+}
+
+.sermon-details {
+    flex: 1;
+}
+
+.sermon-details h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+    font-family: var(--font-secondary);
+}
+
+.sermon-date, .sermon-speaker {
+    color: #666;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.sermon-description {
+    margin-bottom: 20px;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+.sermon-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .welcome .container {
+        flex-direction: column;
+    }
+    
+    .sermon-container {
+        flex-direction: column;
+    }
+    
+    .sermon-video iframe {
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .slide-content h2 {
+        font-size: 2.5rem;
+    }
+    
+    .slide-content p {
+        font-size: 1.2rem;
+    }
+    
+    .welcome-content h2 {
+        font-size: 2rem;
+    }
+    
+    .sermon-actions {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 576px) {
+    .slide-content h2 {
+        font-size: 2rem;
+    }
+    
+    .slide-content p {
+        font-size: 1rem;
+    }
+    
+    .quick-info .container {
+        grid-template-columns: 1fr;
+    }
+}
